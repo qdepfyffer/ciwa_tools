@@ -1,0 +1,18 @@
+# Folders
+ignored/
+images/
+__pycache__/
+
+# main.py is only used for testing the tools, there's no reason to host it
+main.py
+
+
+# Virtual Environment
+.venv/
+
+# JetBrains IDEs
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
