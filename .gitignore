@@ -6,7 +6,6 @@ __pycache__/
 # main.py is only used for testing the tools, there's no reason to host it
 main.py
 
-
 # Virtual Environment
 .venv/
 
