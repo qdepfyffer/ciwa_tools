@@ -15,3 +15,6 @@ main.py
 # OS files
 .DS_Store
 Thumbs.db
+
+# Where did you come from?
+.cache.sqlite
