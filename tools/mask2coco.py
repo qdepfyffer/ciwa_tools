@@ -4,7 +4,7 @@ import json
 import numpy as np
 import pathlib
 from pycocotools import mask as mask_utils
-from file_utils import get_images, get_matching_image
+from util.file_utils import get_images, get_matching_image
 import sys
 
 """

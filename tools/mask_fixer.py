@@ -3,40 +3,12 @@ import cv2
 import numpy as np
 import pathlib
 from skimage.segmentation import slic
+from util.file_utils import get_images, get_matching_image
 import time
 
 """
 Now I am become mask_fixer.py, fixer of masks.
 """
-
-def get_images(img_dir: pathlib.Path) -> list[pathlib.Path]:
-    """Return a sorted list of images in a directory"""
-    img_suffixes = {".png", ".jpg", ".jpeg"}
-    # This is a bunch of python nonsense, but it basically does EXACTLY what the docstring says.
-    # Return the sorted list of valid files in the 'img_dir' directory with file extensions in img_suffixes
-    return sorted(f for f in img_dir.iterdir() if f.is_file() and f.suffix.lower() in img_suffixes)
-
-def find_masks(label_dir: pathlib.Path, image_stem: str) -> pathlib.Path | None:
-    """
-    Find the corresponding mask for a given image stem. Returns None if no mask is found.
-    Checks for common image extensions just in case.
-    Matches exact stem names or stems followed by a separator (e.g., '_L', '-mask', '.label').
-    """
-    # Keep track of valid extensions and stems for label images
-    valid_exts = (".png", ".jpg", ".jpeg")
-    valid_prefixes = (f"{image_stem}_", f"{image_stem}-", f"{image_stem}.")
-
-    # Find candidates and return a valid mask path
-    for candidate in label_dir.iterdir():
-        # Skip anything that isn't an image (specifically of the type we consider, extend valid_exts if necessary)
-        if not candidate.is_file() or candidate.suffix.lower() not in valid_exts:
-            continue
-
-        # Match valid candidates
-        if candidate.stem == image_stem or candidate.stem.startswith(valid_prefixes):
-            return candidate
-
-    return None
 
 def get_temp_mask(file_path: pathlib.Path, save: bool=False) -> np.ndarray:
     """
@@ -118,7 +90,7 @@ def main():
         image = cv2.imread(str(image_path))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         # Find the corresponding mask for each image
-        mask_path = find_masks(label_dir, image_stem)
+        mask_path = get_matching_image(label_dir, image_path)
         if mask_path is None:
             print(f"[WARN]\tNo mask found for {image_stem}")
             continue
