@@ -2,7 +2,7 @@
 This repository contains a collection of tools or scripts that I have written to aid in research / data processing for the CIWA+ project with the AIIS Lab at California State University Fresno.
 
 # Note
-The original versions of these tools or scripts were not written to be flexible, understandable, or maintainable. They were written to solve a specific, immediate problem at the moment with no regard for any further use they might have. I'll try to update this as I rewrite / consolidate things and get them to a state where I'm okay with other people seeing and using them. 
+The original versions of most of these tools or scripts were not written to be flexible, understandable, or maintainable. They were written to solve a specific, immediate problem at the moment with no regard for any further use they might have. I'll try to update this as I rewrite / consolidate things and get them to a state where I'm okay with other people seeing and using them. 
 
 # Installing Dependencies
 
@@ -16,7 +16,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-If you're on Windows, your best bet is probably to install WSL2, clone the project inside the WSL filesystem, and then follow the instructions above. I don't use Windows so I can't guarantee any functionality outside a Unix-like environment. It probably works, but it'll be up to you to get it functioning in a Windows environment.
+If you're on Windows, your best bet is probably to install WSL2, clone the project inside the WSL filesystem, and then follow the instructions above. I don't use Windows, so I can't guarantee any functionality outside a Unix-like environment. It probably works, but it'll be up to you to get it functioning.
 
 If you insist on using Windows:
 ```
