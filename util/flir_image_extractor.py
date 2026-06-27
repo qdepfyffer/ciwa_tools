@@ -33,8 +33,8 @@ class FlirImageExtractor:
         self.exiftool_path = exiftool_path
         self.is_debug = is_debug
         self.flir_img_filename = ""
-        self.image_suffix = "_rgb_image.jpg"
-        self.thumbnail_suffix = "_rgb_thumb.jpg"
+        self.image_suffix = "_visual.jpg"
+        self.thumbnail_suffix = "_thumb.jpg"
         self.thermal_suffix = "_thermal.png"
         self.default_distance = 1.0
 

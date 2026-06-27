@@ -33,6 +33,8 @@ pip install -r requirements.txt
 
 ## tools
 
+- **tools/extract_rgb.py**: Extracts the visual spectrum images embedded in FLIR radiometric images.
+  - **Usage**: python -m tools.extract_rgb /path/to/flir_images
 - **tools/generate_overlays.py**: Generates overlays for the images in two folders.
   - **Usage**: python -m tools.generate_overlays /path/to/folder_a /path/to/folder_b alpha_value
 - **tools/mask2coco.py**: Builds COCO JSON annotations for a binary mask dataset. See the file for a more detailed explanation of its function and how to use it.
