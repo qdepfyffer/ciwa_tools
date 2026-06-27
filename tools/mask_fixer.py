@@ -6,9 +6,11 @@ from skimage.segmentation import slic
 from util.file_utils import get_images, get_matching_image
 import time
 
+
 """
 Now I am become mask_fixer.py, fixer of masks.
 """
+
 
 def get_temp_mask(file_path: pathlib.Path, save: bool=False) -> np.ndarray:
     """

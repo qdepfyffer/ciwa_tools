@@ -1,12 +1,9 @@
 import argparse
 import cv2
-import numpy as np
 import pathlib
 import sys
 from util.file_utils import get_images, get_matching_image
 from util.img_utils import resize_to_match, generate_overlay
-
-
 
 
 def main() -> None:

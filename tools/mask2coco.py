@@ -7,6 +7,7 @@ from pycocotools import mask as mask_utils
 from util.file_utils import get_images, get_matching_image
 import sys
 
+
 """
 Builds COCO JSON annotations for a dataset. Your dataset should be in the following format:
 
